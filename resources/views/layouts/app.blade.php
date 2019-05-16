@@ -18,9 +18,55 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
+
+{{--<div class="container">--}}
+{{--    <form action="/search" method="POST" role="search">--}}
+{{--        {{ csrf_field() }}--}}
+{{--        <div class="input-group">--}}
+{{--            <input type="text" class="form-control" name="q"--}}
+{{--                   placeholder="Search users"> <span class="input-group-btn">--}}
+{{--					<button type="submit" class="btn btn-default">--}}
+{{--						<span class="glyphicon glyphicon-search"></span>--}}
+{{--					</button>--}}
+{{--				</span>--}}
+{{--        </div>--}}
+{{--    </form>--}}
+{{--</div>--}}
+
+
+{{--<div class="container">--}}
+{{--    @if(isset($details))--}}
+{{--        <p> The Search results for your query <b> {{ $query }} </b> are :</p>--}}
+{{--        <h2>Sample User details</h2>--}}
+{{--        <table class="table table-striped">--}}
+{{--            <thead>--}}
+{{--            <tr>--}}
+{{--                <th>Name</th>--}}
+{{--                <th>Email</th>--}}
+{{--            </tr>--}}
+{{--            </thead>--}}
+{{--            <tbody>--}}
+{{--            @foreach($details as $user)--}}
+{{--                <tr>--}}
+{{--                    <td>{{$user->name}}</td>--}}
+{{--                    <td>{{$user->email}}</td>--}}
+{{--                </tr>--}}
+{{--            @endforeach--}}
+{{--            </tbody>--}}
+{{--        </table>--}}
+{{--    @elseif(isset($message))--}}
+{{--        <p>{{ $message }}</p>--}}
+{{--    @endif--}}
+{{--</div>--}}
+
+
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">

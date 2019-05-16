@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Input;
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +16,15 @@
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+
+Route::post('/search', function(){
+    $q = Input::get ( 'q' );
+    $user = User::where('id','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+    if(count($user) > 0)
+        return view('welcome')->withDetails($user)->withQuery ( $q );
+    else return view ('welcome')->withMessage('No Details found. Try to search again !');
 });
 
 Auth::routes();
@@ -38,6 +50,7 @@ Route::delete('/questions/{question_id}/answer/{answer_id}', 'AnswerController@d
 Route::resources([
     'questions' => 'QuestionController',
 ]);
+
 
 
 

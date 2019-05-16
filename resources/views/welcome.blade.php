@@ -12,7 +12,7 @@
         <!-- Styles -->
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        
+
         <style>
             html, body {
                 background-color: #fff;
@@ -81,6 +81,31 @@
 				</span>
             </div>
         </form>
+    </div>
+
+    <div class="container">
+        @if(isset($details))
+            <p> The Search results for your query <b> {{ $query }} </b> are :</p>
+            <h2>Sample User details</h2>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($details as $user)
+                    <tr>
+                        <td>{{$user->id}}</td>
+                        <td>{{$user->email}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        @elseif(isset($message))
+            <p>{{ $message }}</p>
+        @endif
     </div>
 
 
