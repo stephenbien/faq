@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Input;
-use App\User;
+use App\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +21,9 @@ Route::get('/', function () {
 
 Route::post('/search', function(){
     $q = Input::get ( 'q' );
-    $user = User::where('id','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
-    if(count($user) > 0)
-        return view('welcome')->withDetails($user)->withQuery ( $q );
+    $profile = Profile::where('fname','LIKE','%'.$q.'%')->orWhere('lname','LIKE','%'.$q.'%')->get();
+    if(count($profile) > 0)
+        return view('welcome')->withDetails($profile)->withQuery ( $q );
     else return view ('welcome')->withMessage('No Details found. Try to search again !');
 });
 
