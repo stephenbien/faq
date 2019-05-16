@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
         <style>
             html, body {
                 background-color: #fff;
@@ -64,6 +67,24 @@
         </style>
     </head>
     <body>
+
+
+    <div class="container">
+        <form action="/search" method="POST" role="search">
+            {{ csrf_field() }}
+            <div class="input-group">
+                <input type="text" class="form-control" name="q"
+                       placeholder="Search users"> <span class="input-group-btn">
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+            </div>
+        </form>
+    </div>
+
+
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
